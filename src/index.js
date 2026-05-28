@@ -6,6 +6,7 @@ import DynamicNav from "./DynamicNav.vue";
 // the language/appearance/social controls. Injected via enhanceApp so the
 // package is self-contained — no separate CSS import required.
 const CSS = [
+  ".VPDynamicNav.bar{display:flex;align-items:center}",
   ".VPNavBar .content-body .VPDynamicNav.bar{order:2}",
   ".VPNavBar .content-body .translations{order:3}",
   ".VPNavBar .content-body .appearance{order:4}",
