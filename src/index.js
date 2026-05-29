@@ -20,6 +20,21 @@ const CSS = [
 export { default as DynamicNav } from "./DynamicNav.vue";
 
 /**
+ * Vite plugin that marks vp-dynamic-nav as non-external for SSR.
+ * VitePress externalizes node_modules during SSR builds; without this,
+ * Node.js tries to load .vue source files directly and throws
+ * ERR_UNKNOWN_FILE_EXTENSION. Add to the vite.plugins array in config.mjs.
+ */
+export function vpDynamicNavPlugin() {
+  return {
+    name: "vp-dynamic-nav-ssr",
+    config() {
+      return { ssr: { noExternal: ["vp-dynamic-nav"] } };
+    },
+  };
+}
+
+/**
  * Wraps a VitePress theme and injects DynamicNav into the nav bar slots.
  *
  * @param {object} baseTheme - A VitePress theme (e.g. DefaultTheme from 'vitepress/theme')

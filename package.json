@@ -1,6 +1,6 @@
 {
   "name": "vp-dynamic-nav",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "VitePress plugin that fetches and renders the navbar dynamically from a remote JSON file, with localStorage caching",
   "type": "module",
   "main": "./src/index.js",
